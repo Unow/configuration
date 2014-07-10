@@ -24,13 +24,24 @@
         "m2.xlarge",
         "m2.2xlarge",
         "m2.4xlarge",
-        "m3.xlarge",
-        "m3.2xlarge",
+        "cr1.8xlarge",
+        "cc2.8xlarge",
         "c1.medium",
         "c1.xlarge",
-        "cc1.4xlarge",
-        "cc2.8xlarge",
-        "cg1.4xlarge"
+        "m3.medium",
+        "m3.large",
+        "m3.xlarge",
+        "m3.2xlarge",
+        "c3.large",
+        "c3.xlarge",
+        "c3.2xlarge",
+        "c3.4xlarge",
+        "c3.8xlarge",
+        "r3.large",
+        "r3.xlarge",
+        "r3.2xlarge",
+        "r3.4xlarge",
+        "r3.8xlarge"
       ],
       "ConstraintDescription":"must be a valid EC2 instance type."
     },
@@ -56,13 +67,24 @@
         "m2.xlarge",
         "m2.2xlarge",
         "m2.4xlarge",
-        "m3.xlarge",
-        "m3.2xlarge",
+        "cr1.8xlarge",
+        "cc2.8xlarge",
         "c1.medium",
         "c1.xlarge",
-        "cc1.4xlarge",
-        "cc2.8xlarge",
-        "cg1.4xlarge"
+        "m3.medium",
+        "m3.large",
+        "m3.xlarge",
+        "m3.2xlarge",
+        "c3.large",
+        "c3.xlarge",
+        "c3.2xlarge",
+        "c3.4xlarge",
+        "c3.8xlarge",
+        "r3.large",
+        "r3.xlarge",
+        "r3.2xlarge",
+        "r3.4xlarge",
+        "r3.8xlarge"
       ],
       "ConstraintDescription":"must be a valid EC2 instance type."
     },
@@ -79,38 +101,88 @@
         "m2.xlarge",
         "m2.2xlarge",
         "m2.4xlarge",
-        "m3.xlarge",
-        "m3.2xlarge",
+        "cr1.8xlarge",
+        "cc2.8xlarge",
         "c1.medium",
         "c1.xlarge",
-        "cc1.4xlarge",
-        "cc2.8xlarge",
-        "cg1.4xlarge"
+        "m3.medium",
+        "m3.large",
+        "m3.xlarge",
+        "m3.2xlarge",
+        "c3.large",
+        "c3.xlarge",
+        "c3.2xlarge",
+        "c3.4xlarge",
+        "c3.8xlarge",
+        "r3.large",
+        "r3.xlarge",
+        "r3.2xlarge",
+        "r3.4xlarge",
+        "r3.8xlarge"
       ],
       "ConstraintDescription":"must be a valid EC2 instance type."
+    },
+    "JenkinsServerPort":{
+      "Description":"The TCP port for the Jenkins server",
+      "Type":"Number",
+      "Default":"8080"
+    },
+    "AsgardServerPort":{
+      "Description":"The TCP port for the Asgard server",
+      "Type":"Number",
+      "Default":"8090"
+    },
+    "VPCSubnet":{
+      "Description":"The subnet CIDR for the whole VPC.",
+      "Type":"String",
+      "Default":"10.254.0.0/16"
+    },
+    "PrivateSubnet":{
+      "Description":"The subnet CIDR for the private VPC subnet.",
+      "Type":"String",
+      "Default":"10.254.0.0/24"
+    },
+    "PublicSubnet":{
+      "Description":"The subnet CIDR for the public VPC subnet.",
+      "Type":"String",
+      "Default":"10.254.1.0/24"
     }
   },
   "Mappings":{
     "AWSInstanceType2Arch":{
-      "t1.micro":        { "Arch":"64" },
-      "m1.small":        { "Arch":"64" },
-      "m1.medium":       { "Arch":"64" },
-      "m1.large":        { "Arch":"64" },
-      "m1.xlarge":       { "Arch":"64" },
-      "m2.xlarge":       { "Arch":"64" },
-      "m2.2xlarge":      { "Arch":"64" },
-      "m2.4xlarge":      { "Arch":"64" },
-      "m3.xlarge":       { "Arch":"64" },
-      "m3.2xlarge":      { "Arch":"64" },
-      "c1.medium":       { "Arch":"64" },
-      "c1.xlarge":       { "Arch":"64" },
-      "cg1.4xlarge":     { "Arch":"64HVM" }
+      "t1.micro"    : { "Arch" : "64" },
+      "m1.small"    : { "Arch" : "64" },
+      "m1.medium"   : { "Arch" : "64" },
+      "m1.large"    : { "Arch" : "64" },
+      "m1.xlarge"   : { "Arch" : "64" },
+      "m2.xlarge"   : { "Arch" : "64" },
+      "m2.2xlarge"  : { "Arch" : "64" },
+      "m2.4xlarge"  : { "Arch" : "64" },
+      "cr1.8xlarge" : { "Arch" : "64" },
+      "cc2.8xlarge" : { "Arch" : "64" },
+      "c1.medium"   : { "Arch" : "64" },
+      "c1.xlarge"   : { "Arch" : "64" },
+      "m3.medium"   : { "Arch" : "64" },
+      "m3.large"    : { "Arch" : "64" },
+      "m3.xlarge"   : { "Arch" : "64" },
+      "m3.2xlarge"  : { "Arch" : "64" },
+      "m3.4xlarge"  : { "Arch" : "64" },
+      "c3.large"    : { "Arch" : "64" },
+      "c3.xlarge"   : { "Arch" : "64" },
+      "c3.2xlarge"  : { "Arch" : "64" },
+      "c3.4xlarge"  : { "Arch" : "64" },
+      "c3.8xlarge"  : { "Arch" : "64" },
+      "r3.large"    : { "Arch" : "64" },
+      "r3.xlarge"   : { "Arch" : "64" },
+      "r3.2xlarge"  : { "Arch" : "64" },
+      "r3.4xlarge"  : { "Arch" : "64" },
+      "r3.8xlarge"  : { "Arch" : "64" }
     },
     "AWSRegionArch2AMI":{
-      "us-east-1":       { "32":"ami-def89fb7", "64":"ami-d0f89fb9", "64HVM":"ami-b93264d0" },
+      "us-east-1":       { "32":"ami-def89fb7", "64":"ami-d0f89fb9" },
       "us-west-1":       { "32":"ami-fc002cb9", "64":"ami-fe002cbb" },
-      "us-west-2":       { "32":"ami-0ef96e3e", "64":"ami-70f96e40", "64HVM":"ami-6cad335c" },
-      "eu-west-1":       { "32":"ami-c27b6fb6", "64":"ami-ce7b6fba", "64HVM":"ami-8c987efb" },
+      "us-west-2":       { "32":"ami-0ef96e3e", "64":"ami-70f96e40" },
+      "eu-west-1":       { "32":"ami-c27b6fb6", "64":"ami-ce7b6fba" },
       "sa-east-1":       { "32":"ami-a1da00bc", "64":"ami-a3da00be" },
       "ap-southeast-1":  { "32":"ami-66084734", "64":"ami-64084736" },
       "ap-southeast-2":  { "32":"ami-06ea7a3c", "64":"ami-04ea7a3e" },
@@ -125,11 +197,6 @@
       "ap-southeast-2":  { "AMI":"ami-ab990e91" },
       "ap-northeast-1":  { "AMI":"ami-14d86d15" },
       "sa-east-1":       { "AMI":"ami-0439e619" }
-    },
-    "SubnetConfig":{
-      "VPC":             { "CIDR":"10.0.0.0/16" },
-      "Public01":        { "CIDR":"10.0.0.0/24" },
-      "Admin":          { "CIDR":"10.0.185.0/24" }
     },
     "MapRegionsToAvailZones":{
       "us-east-1":       { "AZone2":"us-east-1d",      "AZone0":"us-east-1b",      "AZone1":"us-east-1c" },
@@ -148,7 +215,7 @@
       "Properties":{
         "EnableDnsSupport" : "true",
         "EnableDnsHostnames" : "true",
-        "CidrBlock":"10.0.0.0/16",
+        "CidrBlock": { "Ref": "VPCSubnet" },
         "InstanceTenancy":"default"
       }
     },
@@ -158,25 +225,19 @@
         "VpcId":{
           "Ref":"AdminVPC"
         },
-        "CidrBlock":{
-          "Fn::FindInMap":[
-            "SubnetConfig",
-            "Public01",
-            "CIDR"
-          ]
-        },
+        "CidrBlock":{ "Ref": "PublicSubnet" },
         "AvailabilityZone":{
           "Fn::FindInMap":[
             "MapRegionsToAvailZones",
             { "Ref":"AWS::Region" },
-            "AZone0"
+            "AZone1"
           ]
         },
-        "Tags":[ 
-          { 
-            "Key":"immutable_metadata", 
-            "Value":"{'purpose':'external','target':'ec2'}" 
-          } 
+        "Tags":[
+          {
+            "Key":"immutable_metadata",
+            "Value":"{'purpose':'external','target':'ec2'}"
+          }
         ]
       }
     },
@@ -186,18 +247,12 @@
         "VpcId":{
           "Ref":"AdminVPC"
         },
-        "CidrBlock":{
-          "Fn::FindInMap":[
-            "SubnetConfig",
-            "Admin",
-            "CIDR"
-          ]
-        },
+        "CidrBlock":{ "Ref": "PrivateSubnet" },
         "AvailabilityZone":{
           "Fn::FindInMap":[
             "MapRegionsToAvailZones",
             { "Ref":"AWS::Region" },
-            "AZone0"
+            "AZone1"
           ]
         },
         "Tags":[
@@ -356,13 +411,30 @@
         }
       }
     },
-    "InboundEmphemeralPublicNetworkAclEntry":{
+    "InboundSMTPPublicNetworkAclEntry":{
       "Type":"AWS::EC2::NetworkAclEntry",
       "Properties":{
         "NetworkAclId":{
           "Ref":"PublicNetworkAcl"
         },
         "RuleNumber":"103",
+        "Protocol":"6",
+        "RuleAction":"allow",
+        "Egress":"false",
+        "CidrBlock":"0.0.0.0/0",
+        "PortRange":{
+          "From":"587",
+          "To":"587"
+        }
+      }
+    },
+    "InboundEmphemeralPublicNetworkAclEntry":{
+      "Type":"AWS::EC2::NetworkAclEntry",
+      "Properties":{
+        "NetworkAclId":{
+          "Ref":"PublicNetworkAcl"
+        },
+        "RuleNumber":"104",
         "Protocol":"6",
         "RuleAction":"allow",
         "Egress":"false",
@@ -557,6 +629,14 @@
         "SecurityGroupIngress":[
           {
             "IpProtocol":"tcp",
+            "FromPort":"22",
+            "ToPort":"22",
+            "CidrIp":{
+              "Ref":"SSHLocation"
+            }
+          },
+          {
+            "IpProtocol":"tcp",
             "FromPort":"80",
             "ToPort":"80",
             "CidrIp":"0.0.0.0/0"
@@ -569,16 +649,28 @@
           },
           {
             "IpProtocol":"tcp",
-            "FromPort":"22",
-            "ToPort":"22",
-            "CidrIp":{
-              "Ref":"SSHLocation"
-            }
+            "FromPort":"587",
+            "ToPort":"587",
+            "CidrIp":"0.0.0.0/0"
+          },
+          {
+            "IpProtocol":"tcp",
+            "FromPort":"5222",
+            "ToPort":"5222",
+            "CidrIp":"0.0.0.0/0"
           }
         ],
         "SecurityGroupEgress":[
           {
             "IpProtocol":"tcp",
+            "FromPort":"22",
+            "ToPort":"22",
+            "CidrIp":{
+              "Ref":"SSHLocation"
+            }
+          },
+          {
+            "IpProtocol":"tcp",
             "FromPort":"80",
             "ToPort":"80",
             "CidrIp":"0.0.0.0/0"
@@ -591,11 +683,15 @@
           },
           {
             "IpProtocol":"tcp",
-            "FromPort":"22",
-            "ToPort":"22",
-            "CidrIp":{
-              "Ref":"SSHLocation"
-            }
+            "FromPort":"587",
+            "ToPort":"587",
+            "CidrIp":"0.0.0.0/0"
+          },
+          {
+            "IpProtocol":"tcp",
+            "FromPort":"5222",
+            "ToPort":"5222",
+            "CidrIp":"0.0.0.0/0"
           }
         ]
       }
@@ -645,7 +741,7 @@
         ],
         "Tags":[
           {
-            "Key":"role",
+            "Key":"play",
             "Value":"bastion"
           },
           {
@@ -680,7 +776,7 @@
             "IpProtocol":"tcp",
             "FromPort":"22",
             "ToPort":"22",
-            "CidrIp":"10.0.0.0/16"
+            "CidrIp":"10.254.0.0/16"
           },
           {
             "IpProtocol":"tcp",
@@ -690,8 +786,14 @@
           },
           {
             "IpProtocol":"tcp",
-            "FromPort":"443",
-            "ToPort":"443",
+            "FromPort":{ "Ref": "JenkinsServerPort" },
+            "ToPort":{ "Ref": "JenkinsServerPort" },
+            "CidrIp":"0.0.0.0/0"
+          },
+          {
+            "IpProtocol":"tcp",
+            "FromPort":{ "Ref": "AsgardServerPort" },
+            "ToPort":{ "Ref": "AsgardServerPort" },
             "CidrIp":"0.0.0.0/0"
           }
         ]
@@ -709,7 +811,19 @@
                     "Action": [ "sts:AssumeRole" ]
                 } ]
             },
-            "Path": "/"
+            "Path": "/",
+            "Policies": [ {
+              "PolicyName": "AdminBasePolicy",
+              "PolicyDocument": {
+                "Statement":[
+                  {
+                    "Effect":"Allow",
+                    "Action": "*",
+                    "Resource":"*"
+                  }
+                ]
+              }
+            } ]
         }
     },
     "AdminInstanceProfile": {
@@ -730,7 +844,7 @@
         "KeyName":{
           "Ref":"KeyName"
         },
-        "IamInstanceProfile" : { 
+        "IamInstanceProfile" : {
           "Ref" : "AdminInstanceProfile"
         },
         "SubnetId":{
@@ -760,7 +874,7 @@
         ],
         "Tags":[
           {
-            "Key":"role",
+            "Key":"play",
             "Value":"admin"
           },
           {
@@ -769,6 +883,54 @@
               "Ref":"DeploymentTag"
             },
             "PropagateAtLaunch":true
+          }
+        ],
+        "UserData":{
+          "Fn::Base64":{
+            "Fn::Join":[
+              "",
+              [
+                "#!/bin/bash -x\n",
+                "exec >> /home/ubuntu/cflog.log\n",
+                "exec 2>> /home/ubuntu/cflog.log\n",
+                "function error_exit\n",
+                "{\n",
+                "  cfn-signal -e 1 -r \"$1\" '",
+                {
+                  "Ref":"AdminServerWaitHandle"
+                },
+                "'\n",
+                "  exit 1\n",
+                "}\n",
+                "apt-get -y update\n",
+                "apt-get -y install python-setuptools\n",
+                "echo \"Python Tools installed\" - `date`\n",
+                "easy_install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz\n",
+                "echo \"Cloudformation Boostrap installed \" - `date`\n",
+                "# If all went well, signal success\n",
+                "cfn-signal -e $? -r 'Edx Server configuration' '",
+                {
+                  "Ref":"AdminServerWaitHandle"
+                },
+                "'\n"
+              ]
+            ]
+          }
+        },
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs":{
+              "VolumeSize": 100
+            }
+          },
+          {
+            "DeviceName": "/dev/sdb",
+            "VirtualName": "ephemeral0"
+          },
+          {
+            "DeviceName": "/dev/sdc",
+            "VirtualName": "ephemeral1"
           }
         ]
       }
@@ -791,37 +953,30 @@
           },
           {
             "IpProtocol":"tcp",
-            "FromPort":"80",
-            "ToPort":"80",
+            "FromPort":{ "Ref": "JenkinsServerPort" },
+            "ToPort":{ "Ref": "JenkinsServerPort" },
             "CidrIp":"0.0.0.0/0"
           },
           {
             "IpProtocol":"tcp",
-            "FromPort":"443",
-            "ToPort":"443",
-            "CidrIp":"0.0.0.0/0"
-          }
-        ],
-        "SecurityGroupEgress":[
-          {
-            "IpProtocol":"tcp",
-            "FromPort":"22",
-            "ToPort":"22",
-            "CidrIp":"10.0.0.0/16"
-          },
-          {
-            "IpProtocol":"tcp",
-            "FromPort":"80",
-            "ToPort":"80",
-            "CidrIp":"0.0.0.0/0"
-          },
-          {
-            "IpProtocol":"tcp",
-            "FromPort":"443",
-            "ToPort":"443",
+            "FromPort":{ "Ref": "AsgardServerPort" },
+            "ToPort":{ "Ref": "AsgardServerPort" },
             "CidrIp":"0.0.0.0/0"
           }
         ]
+      }
+    },
+    "AdminServerWaitHandle":{
+      "Type":"AWS::CloudFormation::WaitConditionHandle"
+    },
+    "AdminServerWaitCondition":{
+      "Type":"AWS::CloudFormation::WaitCondition",
+      "DependsOn":"AdminHost",
+      "Properties":{
+        "Handle":{
+          "Ref":"AdminServerWaitHandle"
+        },
+        "Timeout":"1200"
       }
     }
   }

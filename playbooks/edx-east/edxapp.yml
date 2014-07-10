@@ -2,9 +2,8 @@
   hosts: all
   sudo: True
   gather_facts: True
-  vars_files:
-    - ["{{ secure_vars }}", "dummy.yml"]
   roles:
+    - aws
     - role: nginx
       nginx_sites:
       - lms
@@ -12,3 +11,9 @@
       nginx_default_sites:
       - lms
     - edxapp
+    - role: datadog
+      when: COMMON_ENABLE_DATADOG
+    - role: splunkforwarder
+      when: COMMON_ENABLE_SPLUNKFORWARDER
+    - role: newrelic
+      when: COMMON_ENABLE_NEWRELIC
