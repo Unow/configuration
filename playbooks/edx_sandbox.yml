@@ -19,6 +19,7 @@
     COMMON_ENABLE_DATADOG: False
     COMMON_ENABLE_SPLUNKFORWARDER: False
   roles:
+    - security
     - role: nginx
       nginx_sites:
       - cms
