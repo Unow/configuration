@@ -34,7 +34,6 @@
     - { role: 'edxapp', celery_worker: True }
     - edxapp
     - notifier
-    - analytics_api
     - edx_notes_api
     - { role: 'rabbitmq', rabbitmq_ip: '127.0.0.1' }
     - oraclejdk
