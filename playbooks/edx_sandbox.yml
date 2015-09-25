@@ -19,6 +19,8 @@
     COMMON_ENABLE_DATADOG: False
     COMMON_ENABLE_SPLUNKFORWARDER: False
     ENABLE_LEGACY_ORA: !!null
+  vars_files:
+    - "{{ secure_dir }}/vars/edxapp_vars.yml"
   roles:
     - role: nginx
       nginx_sites:
